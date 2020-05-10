@@ -152,101 +152,66 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-我的第一篇文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-美团测开一面面经" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">我的第一篇文章</a>
+      <a class="article-title" href="/2020/05/11/%E7%BE%8E%E5%9B%A2%E6%B5%8B%E5%BC%80%E4%B8%80%E9%9D%A2%E9%9D%A2%E7%BB%8F/">美团测开一面面经</a>
     </h1>
   
 
         
-        <a href="/2020/04/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" class="archive-article-date">
-  	<time datetime="2020-04-28T15:59:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-28</time>
+        <a href="/2020/05/11/%E7%BE%8E%E5%9B%A2%E6%B5%8B%E5%BC%80%E4%B8%80%E9%9D%A2%E9%9D%A2%E7%BB%8F/" class="archive-article-date">
+  	<time datetime="2020-05-10T17:32:59.196Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-      
+        <h1 id="美团测开面经"><a href="#美团测开面经" class="headerlink" title="美团测开面经"></a>美团测开面经</h1><h2 id="1-如何设计测试用例"><a href="#1-如何设计测试用例" class="headerlink" title="1.如何设计测试用例"></a>1.如何设计测试用例</h2><p>（1） 设计新的测试用例，使其尽可能多地覆盖未覆盖的有效等价类，按照这一步骤重复进行，直到所有的有效等价类都被覆盖为止；</p>
+<p>（2） 设计新的测试用例，使其只覆盖一个尚未被覆盖的无效等价类，按照这一步骤重复进行，直到所有的无效等价类都被覆盖为止。</p>
+<p>注意：一条测试用例只能包含一个无效等价类，这一点是非常重要的，就像测试人员经常说一条测试用例只包含一个测试点一样。</p>
+<p>（3） 使用边界值分析法对等价类划分法完成之后作补充，但这也是必不可少的，原因就是程序的大量错误是发生在输入或输出范围的边界上的，而不是在输入范围的内部，因此，针对各种边界情况设计测试用例，通常会取得很好的测试效果。</p>
+<h2 id="2-资源调度问题"><a href="#2-资源调度问题" class="headerlink" title="2.资源调度问题"></a>2.资源调度问题</h2><p>（1）进程是资源分配的最小单位，线程是CPU调度的最小单位。</p>
+<p>（2） 进程分为I/O消耗型和CPU消耗型，对于CPU消耗型的调度策略往往是降低他们的执行频率，延长运行时间。Linux系统为了提升响应的速度，倾向于优先调度I/O消耗型。</p>
+<h2 id="3-同步和异步的区别"><a href="#3-同步和异步的区别" class="headerlink" title="3.同步和异步的区别"></a>3.同步和异步的区别</h2><p>同步就是发出一个功能调用时，在没有得到结果之前，该调用就不返回或继续执行后续操作。即，同步就是必须一件事情做完了才能做下一件事。</p>
+<p>异步指当一个调用发出后，调用者在没有得到结果之前，就可以继续执行后续操作。当这个调用完成后，一般通过状态、通知和回调来通知调用者。对于异步调用，调用的返回并不受调用者控制。</p>
+<h2 id="4-http常用首部及常用状态码"><a href="#4-http常用首部及常用状态码" class="headerlink" title="4.http常用首部及常用状态码"></a>4.http常用首部及常用状态码</h2><h3 id="1-首部字段"><a href="#1-首部字段" class="headerlink" title="1) 首部字段"></a>1) 首部字段</h3><p>（1）通用首部</p>
+<p><img src="C:%5CUsers%5C92998%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200511010459136.png" alt="image-20200511010459136"></p>
+<p>（2）请求首部</p>
+<p><img src="C:%5CUsers%5C92998%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200511010633649.png" alt="image-20200511010633649"></p>
+<p>（3）响应首部</p>
+<p><img src="C:%5CUsers%5C92998%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200511010701579.png" alt="image-20200511010701579"></p>
+<h3 id="2）状态码"><a href="#2）状态码" class="headerlink" title="2）状态码"></a>2）状态码</h3><p>2xx（3种）</p>
+<p>200 OK：表示从客户端发送给服务器的请求被正常处理并返回；</p>
+<p>204 No Content：表示客户端发送给客户端的请求得到了成功处理，但在返回的响应报文中不含实体的主体部分（没有资源可以返回）；</p>
+<p>206 Patial Content：表示客户端进行了范围请求，并且服务器成功执行了这部分的GET请求，响应报文中包含由Content-Range指定范围的实体内容。</p>
+<p>3xx （5种）</p>
+<p>301 Moved Permanently：永久性重定向，表示请求的资源被分配了新的URL，之后应使用更改的URL；</p>
+<p>302 Found：临时性重定向，表示请求的资源被分配了新的URL，希望本次访问使用新的URL；</p>
+<pre><code>301与302的区别：前者是永久移动，后者是临时移动（之后可能还会更改URL）</code></pre><p>303 See Other：表示请求的资源被分配了新的URL，应使用GET方法定向获取请求的资源；</p>
+<pre><code>302与303的区别：后者明确表示客户端应当采用GET方式获取资源</code></pre><p>304 Not Modified：表示客户端发送附带条件（是指采用GET方法的请求报文中包含if-Match、If-Modified-Since、If-None-Match、If-Range、If-Unmodified-Since中任一首部）的请求时，服务器端允许访问资源，但是请求为满足条件的情况下返回改状态码；</p>
+<p>307 Temporary Redirect：临时重定向，与303有着相同的含义，307会遵照浏览器标准不会从POST变成GET；（不同浏览器可能会出现不同的情况）；</p>
+<p>4xx （4种）</p>
+<p>400 Bad Request：表示请求报文中存在语法错误；</p>
+<p>401 Unauthorized：未经许可，需要通过HTTP认证；</p>
+<p>403 Forbidden：服务器拒绝该次访问（访问权限出现问题）</p>
+<p>404 Not Found：表示服务器上无法找到请求的资源，除此之外，也可以在服务器拒绝请求但不想给拒绝原因时使用；</p>
+<p>5xx （2种）</p>
+<p>500 Inter Server Error：表示服务器在执行请求时发生了错误，也有可能是web应用存在的bug或某些临时的错误时；</p>
+<p>503 Server Unavailable：表示服务器暂时处于超负载或正在进行停机维护，无法处理请求。</p>
+<h2 id="5-如何判断链表是否有环"><a href="#5-如何判断链表是否有环" class="headerlink" title="5.如何判断链表是否有环"></a>5.如何判断链表是否有环</h2><p>使用快慢指针</p>
+<h2 id="6-反转链表"><a href="#6-反转链表" class="headerlink" title="6.反转链表"></a>6.反转链表</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">public class ListNode &#123;</span></span><br><span class="line"><span class="comment">    int val;</span></span><br><span class="line"><span class="comment">    ListNode next = null;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    ListNode(int val) &#123;</span></span><br><span class="line"><span class="comment">        this.val = val;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">ReverseList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head==<span class="keyword">null</span> || head.next==<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode pre=<span class="keyword">null</span>;</span><br><span class="line">        ListNode post=<span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">while</span>(head!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            post=head.next;</span><br><span class="line">            head.next=pre;</span><br><span class="line">            pre=head;</span><br><span class="line">            head=post;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/28/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/28/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/28/hello-world/" class="archive-article-date">
-  	<time datetime="2020-04-28T15:54:39.735Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h2 id="7-MySQL中的悲观锁和乐观锁"><a href="#7-MySQL中的悲观锁和乐观锁" class="headerlink" title="7.MySQL中的悲观锁和乐观锁"></a>7.MySQL中的悲观锁和乐观锁</h2><p>乐观锁认为一个用户读数据的时候，别人不会去写自己所读的数据；悲观锁就刚好相反，觉得自己读数据库的时候，别人可能刚好在写自己刚读的数据，其实就是持一种比较保守的态度；时间戳就是不加锁，通过时间戳来控制并发出现的问题。</p>
+<p>悲观锁就是在读取数据的时候，为了不让别人修改自己读取的数据，就会先对自己读取的数据加锁，只有自己把数据读完了，才允许别人修改那部分数据，或者反过来说，就是自己修改某条数<br>据的时候，不允许别人读取该数据，只有等自己的整个事务提交了，才释放自己加上的锁，才允许其他用户访问那部分数据 。</p>
+<h2 id="8-什么是索引"><a href="#8-什么是索引" class="headerlink" title="8.什么是索引"></a>8.什么是索引</h2><p>索引（Index）是帮助 MySQL 高效获取数据的数据结构。 常见的查询算法,顺序查找,二分查找,二叉排序树查找,哈希散列法,分块查找,平衡多路搜索树 B 树（B-tree） 。</p>
+<h2 id="9-String和StringBuffer的区别"><a href="#9-String和StringBuffer的区别" class="headerlink" title="9.String和StringBuffer的区别"></a>9.String和StringBuffer的区别</h2><p>String是不可变对象，被Final修饰，对于已存在的String对象都是重新创建个新对象，然后把新的值存进去。</p>
+<p>StringBuffer是可变对象，对其修改时不用重新建立对象，它只能通过构造函数来建立，通过append方法向其赋值。其字符串连接效率高于String。</p>
 
       
 
@@ -259,7 +224,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/28/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/11/%E7%BE%8E%E5%9B%A2%E6%B5%8B%E5%BC%80%E4%B8%80%E9%9D%A2%E9%9D%A2%E7%BB%8F/">展开全文 >></a>
         </p>
       
 
